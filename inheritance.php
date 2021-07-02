@@ -25,17 +25,29 @@ class Produk
         return "$this->penulis, $this->penerbit";
     }
 
-    public function infoLengkap()
+    public function infoProduk()
     {
         $prInfoLengkap = "{$this->judul} | {$this->getLabel()} (Rp. {$this->harga})";
 
-        if ($this->jenis == "Lagu") {
-            $prInfoLengkap .= " ~ {$this->lamaLagu} Menit";
-        }
+        return $prInfoLengkap;
+    }
+}
 
-        if ($this->jenis == "Buku") {
-            $prInfoLengkap .= " - {$this->halaman} Halaman";
-        }
+class Lagu extends Produk
+{
+    public function infoProduk()
+    {
+        $prInfoLengkap = "Lagu : {$this->judul} | {$this->getLabel()} (Rp. {$this->harga}) - {$this->lamaLagu} Menit";
+
+        return $prInfoLengkap;
+    }
+}
+
+class Buku extends Produk
+{
+    public function infoProduk()
+    {
+        $prInfoLengkap = "Buku : {$this->judul} | {$this->getLabel()} (Rp. {$this->harga}) - {$this->halaman} Halaman";
 
         return $prInfoLengkap;
     }
@@ -50,9 +62,10 @@ class CetakInfoProduk
     }
 }
 
-$produk1 = new Produk("Kaibutsu", "Ayase", "Yoasobi", 10000, 3, 0, "Lagu");
 
-$produk2 = new Produk("Mantappu Jiwa", "Jerome Polin", "Gramedia Pustaka", 85000, 0, 228, "Buku");
+$produk1 = new Lagu("Kaibutsu", "Ayase", "Yoasobi", 10000, 3, 0);
+
+$produk2 = new Buku("Mantappu Jiwa", "Jerome Polin", "Gramedia Pustaka", 85000, 0, 228);
 
 // echo "Lagu : " . $produk1->getLabel();
 // echo "<br>";
@@ -60,6 +73,6 @@ $produk2 = new Produk("Mantappu Jiwa", "Jerome Polin", "Gramedia Pustaka", 85000
 
 // echo "<br>";
 
-echo $produk1->infoLengkap();
+echo $produk1->infoProduk();
 echo "<br>";
-echo $produk2->infoLengkap();
+echo $produk2->infoProduk();
