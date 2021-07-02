@@ -28,11 +28,11 @@ $produk3->penerbit = "Yoasobi";
 $produk3->harga = "10000";
 
 $produk4 = new Produk();
-$produk4->judul = "Harudorobou";
-$produk4->penulis = "N-buna";
-$produk4->penerbit = "Yorushika";
-$produk4->harga = "30000";
+$produk4->judul = "Mantappu Jiwa";
+$produk4->penulis = "Jerome Polin";
+$produk4->penerbit = "Gramedia Pustaka";
+$produk4->harga = "85000";
 
-echo "Lagu 1 : " . $produk3->getLabel();
+echo "Lagu : " . $produk3->getLabel();
 echo "<br>";
-echo "Lagu 2 : " . $produk4->getLabel();
+echo "Buku : " . $produk4->getLabel();

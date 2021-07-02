@@ -22,12 +22,12 @@ class Produk
 
 $produk1 = new Produk("Kaibutsu", "Ayase", "Yoasobi", 10000);
 
-$produk2 = new Produk("Harudorobou", "N-buna", "Yorushika", 30000);
+$produk2 = new Produk("Mantappu Jiwa", "Jerome Polin", "Gramedia Pustaka", 85000);
 
 $produk3 = new Produk("Yakusoku");
 
-echo "Lagu 1 : " . $produk1->getLabel();
+echo "Lagu : " . $produk1->getLabel();
 echo "<br>";
-echo "Lagu 2 : " . $produk2->getLabel();
+echo "Buku : " . $produk2->getLabel();
 echo "<br>";
 var_dump($produk3);
